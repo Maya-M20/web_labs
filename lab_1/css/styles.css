@@ -2,4 +2,35 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica", Sans-Serif;
+    background-color: #f3a97b;
+}
+
+a {
+  color: #e56515; 
+}
+
+.products-section {
+  padding-left: 45px;
+}
+
+.product {
+  display: inline-block;
+  vertical-align: top; 
+  margin-right: 50px; 
+  margin-bottom: 30px; 
+  width: 190px;
+}
+
+.product:last-child {
+  margin-right: 0;
+}
+
+.new-arrivals {
+    text-align: center;
 }
