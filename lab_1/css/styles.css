@@ -34,3 +34,24 @@ a {
 .new-arrivals {
     text-align: center;
 }
+
+button {
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .8);
+}
+
+.open,
+.close {
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .8);
+}
+
+.modal {
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.modal[open]::backdrop {
+    background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8));
+}

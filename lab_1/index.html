@@ -31,17 +31,15 @@
 
                 <button>Add to Cart</button>
 
-            </article>
+                <dialog class="modal">
+                    <h2>Description</h2>
 
-            <article class="product">
+                    <p>There will be a description of the game</p>
 
-                <img src="images/citadels.jpg" alt="Citadels pic" width="200">
+                    <button class="close">Close</button>
+                </dialog>
 
-                <h3>Citadels</h3>
-
-                <p>$20</p>
-
-                <button>Add to Cart</button>
+                <button class="open">More</button>
 
             </article>
 
@@ -55,29 +53,16 @@
 
                 <button>Add to Cart</button>
 
-            </article>
+                <dialog class="modal">
+                    <h2>Description</h2>
 
-            <article class="product">
+                    <p>There will be a description of the game</p>
 
-                <img src="images/citadels.jpg" alt="Citadels pic" width="200">
+                    <button class="close">Close</button>
+                </dialog>
 
-                <h3>Citadels</h3>
-
-                <p>$20</p>
-
-                <button>Add to Cart</button>
-
-            </article>
-
-            <article class="product">
-
-                <img src="images/citadels.jpg" alt="Citadels pic" width="200">
-
-                <h3>Citadels</h3>
-
-                <p>$20</p>
-
-                <button>Add to Cart</button>
+                <button class="open">More</button>
+                   
 
             </article>
 
@@ -91,9 +76,105 @@
 
                 <button>Add to Cart</button>
 
+                <dialog class="modal">
+                    <h2>Description</h2>
+
+                    <p>There will be a description of the game</p>
+
+                    <button class="close">Close</button>
+                </dialog>
+
+                <button class="open">More</button>
+
             </article>
 
+            <article class="product">
 
+                <img src="images/citadels.jpg" alt="Citadels pic" width="200">
+
+                <h3>Citadels</h3>
+
+                <p>$20</p>
+
+                <button>Add to Cart</button>
+
+                <dialog class="modal">
+                    <h2>Description</h2>
+
+                    <p>There will be a description of the game</p>
+
+                    <button class="close">Close</button>
+                </dialog>
+
+                <button class="open">More</button>
+
+            </article>
+
+            <article class="product">
+
+                <img src="images/citadels.jpg" alt="Citadels pic" width="200">
+
+                <h3>Citadels</h3>
+
+                <p>$20</p>
+
+                <button>Add to Cart</button>
+
+                <dialog class="modal">
+                    <h2>Description</h2>
+
+                    <p>There will be a description of the game</p>
+
+                    <button class="close">Close</button>
+                </dialog>
+
+                <button class="open">More</button>
+
+            </article>
+
+            <article class="product">
+
+                <img src="images/citadels.jpg" alt="Citadels pic" width="200">
+
+                <h3>Citadels</h3>
+
+                <p>$20</p>
+
+                <button>Add to Cart</button>
+
+                <dialog class="modal">
+                    <h2>Description</h2>
+
+                    <p>There will be a description of the game</p>
+
+                    <button class="close">Close</button>
+                </dialog>
+
+                <button class="open">More</button>
+
+            </article>
+
+            <script>
+                const openBtns = document.querySelectorAll('.open');
+                const closeBtns = document.querySelectorAll('.close');
+
+                openBtns.forEach((openBtn) => {
+                    openBtn.addEventListener('click', () => {
+                        const product = openBtn.closest('.product');
+                        const dialog = product.querySelector('.modal');
+
+                        dialog.showModal();
+                    });
+                });
+
+                closeBtns.forEach((closeBtn) => {
+                    closeBtn.addEventListener('click', () => {
+                        const dialog = closeBtn.closest('.modal');
+
+                        dialog.close();
+                    });
+                });
+            </script>
         </section>
     
         <form>
