@@ -13,6 +13,11 @@ body {
 
 a {
   color: #e56515; 
+  margin-right: 50px;
+}
+
+h1 {
+    margin-left: 30px;
 }
 
 .products-section {
@@ -54,4 +59,36 @@ button {
 
 .modal[open]::backdrop {
     background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8));
+}
+
+.cart-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e56515;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.shop-button {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #fbfbfa;
+    color: #e56515;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cart {
+    margin-left: 50px;
+}
+
+.product-in-cart {
+  display: flex; 
+  gap: 500px;
+  align-items: center;
+}
+
+.column {
+  flex: 1;  
 }
