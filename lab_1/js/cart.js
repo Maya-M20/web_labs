@@ -1,6 +1,22 @@
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const productsContainer = document.querySelector(".products-in-cart");
+const totalElement = document.querySelector(".cart-total");
+
+
+function getTotalSum(cart){
+    let totalPrice = 0;
+    cart.forEach(product => {
+        totalPrice += product.price * product.quantity;
+    });
+
+    return totalPrice;
+}
+
+function updateTotalSum(){
+    const total = getTotalSum(cart);
+    totalElement.textContent = `Total: $${total}`
+}
 
 cart.forEach(product => {
     const productElement = document.createElement("div");
@@ -33,12 +49,14 @@ cart.forEach(product => {
         product.quantity += 1;
         quantityElement.textContent = product.quantity;
         localStorage.setItem("cart", JSON.stringify(cart));
+        updateTotalSum();
     });
     minusButton.addEventListener("click", () => {
         if (product.quantity > 1) {
             product.quantity -= 1;
             quantityElement.textContent = product.quantity;
             localStorage.setItem("cart", JSON.stringify(cart));
+            updateTotalSum();
     }});
     removeButton.addEventListener("click", () => {
         const index = cart.indexOf(product);
@@ -48,8 +66,14 @@ cart.forEach(product => {
         localStorage.setItem("cart", JSON.stringify(cart));
 
         productElement.remove();
+        updateTotalSum();
     });
 });
+
+updateTotalSum();
+
+
+
 
 
 
