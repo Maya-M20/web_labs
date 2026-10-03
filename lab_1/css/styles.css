@@ -101,3 +101,26 @@ button {
 .column {
   flex: 1;  
 }
+
+form {
+    background: rgb(131, 115, 115);
+    width: calc(100% - 40px);
+    max-width: 500px; 
+    margin: 0 auto;      
+    padding: 30px;
+    border-radius: 20px; 
+    color: #212020;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    text-align: center;   
+}
+
+form input {
+    margin-top: 5px;      
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    text-align: center; 
+}
