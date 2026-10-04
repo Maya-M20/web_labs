@@ -20,6 +20,23 @@ h1 {
     margin-left: 30px;
 }
 
+.header-titles {
+    text-align: center;
+    margin-top: 40px; 
+    margin-bottom: 20px;
+}
+
+.main-title {
+    margin-bottom: 5px; 
+}
+
+.shop-description {
+    font-size: 15px;  
+    font-weight: normal;
+    color: #322f2f; 
+    margin-top: 0;    
+}
+
 .products-section {
   padding-left: 45px;
 }
@@ -28,6 +45,7 @@ h1 {
   display: inline-block;
   vertical-align: top; 
   margin-right: 50px; 
+  margin-left: 25px;
   margin-bottom: 30px; 
   width: 190px;
 }
@@ -85,6 +103,15 @@ button {
     padding: 10px 10px;
     background-color: #fbfbfa;
     color: #e56515;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.shop-button-about {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #454341;
+    color: #ddd7d4;
     text-decoration: none;
     border-radius: 5px;
 }
@@ -162,4 +189,28 @@ form input {
     text-decoration: none;
     border-radius: 5px;
 }
+
+.about {
+  padding-left: 45px;
+  padding-right: 25px;
+  font-size: 20px;
+}
+
+
+.our-team h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px; 
+}
+
+.team-member {
+  width: 190px;
+  text-align: center;  
+}
+
 
