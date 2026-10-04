@@ -27,7 +27,9 @@
             <p class="cart-total"></p>
         </section>
 
-        <form>
+        <button class="checkout">Checkout</button>
+        <dialog class="modal-form">
+            <form class="order-form">
 
             <label>
                 Name
@@ -54,18 +56,21 @@
             <br>
 
             <label>
-                Email
-                <input type="email" required placeholder="Enter your email">
+                Phone
+                <input type="tel" required placeholder="Enter your phone number">
             </label>
 
             <br>
             <br>
 
-            <button type="submit">
-                Create an order
-            </button>
-
+            <button type="submit">Create an order</button>
         </form>
+        </dialog>
+
+        <dialog class="modal-success">
+            <p class="modal-text">Order placed successfully</p>
+            <button id="closeModal" class="close">OK</button>
+        </dialog>
     </main>
 
     <footer>

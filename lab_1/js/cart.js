@@ -3,78 +3,99 @@ const cart = JSON.parse(localStorage.getItem("cart")) || [];
 const productsContainer = document.querySelector(".products-in-cart");
 const totalElement = document.querySelector(".cart-total");
 
-
 function getTotalSum(cart){
     let totalPrice = 0;
     cart.forEach(product => {
         totalPrice += product.price * product.quantity;
     });
-
     return totalPrice;
 }
 
 function updateTotalSum(){
     const total = getTotalSum(cart);
-    totalElement.textContent = `Total: $${total}`
+    totalElement.textContent = `Total: $${total}`;
 }
 
-cart.forEach(product => {
-    const productElement = document.createElement("div");
+function renderCart() {
+    productsContainer.innerHTML = "";
 
-    productElement.classList.add("product-in-cart");
+    cart.forEach(product => {
+        const productElement = document.createElement("div");
+        productElement.classList.add("product-in-cart");
 
-    productElement.innerHTML = `
-        <div class="column">
-            <img src="images/${product.name.toLowerCase()}.jpg" alt="${product.name.toLowerCase()} pic" width="80">
-            <h3>${product.name}</h3>
-            <button class="plus">+</button>
-            <span class="quantity">${product.quantity}</span>
-            <button class="minus">-</button>
-        </div>
+        productElement.innerHTML = `
+            <div class="column">
+                <img src="images/${product.name.toLowerCase()}.jpg" alt="${product.name.toLowerCase()} pic" width="80">
+                <h3>${product.name}</h3>
+                <button class="plus">+</button>
+                <span class="quantity">${product.quantity}</span>
+                <button class="minus">-</button>
+            </div>
+            <div class="column">
+                <p>$${product.price}</p>
+                <button class="remove">Remove</button>
+            </div>
+        `;
 
-        <div class="column">
-            <p>$${product.price}</p>
-            <button class="remove">Remove</button>
-        </div>
-    `;
+        productsContainer.appendChild(productElement);
 
-    productsContainer.appendChild(productElement);
+        const plusButton = productElement.querySelector(".plus");
+        const minusButton = productElement.querySelector(".minus");
+        const quantityElement = productElement.querySelector(".quantity");
+        const removeButton = productElement.querySelector(".remove");
 
-    const plusButton = productElement.querySelector(".plus");
-    const minusButton = productElement.querySelector(".minus");
-    const quantityElement = productElement.querySelector(".quantity");
-    const removeButton = productElement.querySelector(".remove")
-
-    plusButton.addEventListener("click", () => {
-        product.quantity += 1;
-        quantityElement.textContent = product.quantity;
-        localStorage.setItem("cart", JSON.stringify(cart));
-        updateTotalSum();
-    });
-    minusButton.addEventListener("click", () => {
-        if (product.quantity > 1) {
-            product.quantity -= 1;
+        plusButton.addEventListener("click", () => {
+            product.quantity += 1;
             quantityElement.textContent = product.quantity;
             localStorage.setItem("cart", JSON.stringify(cart));
             updateTotalSum();
-    }});
-    removeButton.addEventListener("click", () => {
-        const index = cart.indexOf(product);
+        });
 
-        cart.splice(index, 1);
+        minusButton.addEventListener("click", () => {
+            if (product.quantity > 1) {
+                product.quantity -= 1;
+                quantityElement.textContent = product.quantity;
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateTotalSum();
+            }
+        });
 
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        productElement.remove();
-        updateTotalSum();
+        removeButton.addEventListener("click", () => {
+            const index = cart.indexOf(product);
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            productElement.remove();
+            updateTotalSum();
+        });
     });
-});
+}
 
+renderCart();
 updateTotalSum();
 
+const checkoutBtn = document.querySelector('.checkout');
+const modalForm = document.querySelector('.modal-form');
+const orderForm = document.querySelector('.order-form');
+const modalSuccess = document.querySelector('.modal-success');
+const closeSuccessBtn = modalSuccess.querySelector('.close');
 
+checkoutBtn.addEventListener('click', function() {
+    modalForm.showModal();
+});
 
+orderForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    modalForm.close();
+    modalSuccess.showModal();
+});
 
-
-
-
+closeSuccessBtn.addEventListener('click', function() {
+    modalSuccess.close();
+    orderForm.reset();
+    
+    cart.length = 0; 
+    localStorage.removeItem('cart');
+    
+    renderCart();
+    updateTotalSum();
+});

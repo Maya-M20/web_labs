@@ -8,7 +8,7 @@ header {
 body {
     margin: 0;
     font-family: "Helvetica", Sans-Serif;
-    background-color: #f3a97b;
+    background-color: #f4b991;
 }
 
 a {
@@ -57,6 +57,7 @@ button {
     padding: 2rem;
     font-size: 2rem;
     font-weight: 800;
+    background-color: #ea9460;
 }
 
 .modal[open]::backdrop {
@@ -124,3 +125,41 @@ form input {
     border: 1px solid #ccc;
     text-align: center; 
 }
+
+.modal-form {
+    background-color: #ea9460;
+    padding: 30px;         /* Внутренние отступы, чтобы текст не прилипал к краям */
+    border: none;          /* Убираем стандартную рамку браузера */
+    border-radius: 12px; 
+}
+.modal-form[open]::backdrop {
+    background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8));
+}
+
+.modal-form-text {
+    font-weight: normal;
+    font-size: 15px; 
+    line-height: 1.4;
+    color: #333;
+}
+
+.modal-success {
+    max-width: 800px;
+    max-height: 80vh;
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: 800;
+    background-color: #ea9460;
+}
+
+.checkout {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 30px;
+    font-size: 16px;
+    background-color: #decfc2;
+    color: #1e1d1d;
+    text-decoration: none;
+    border-radius: 5px;
+}
+

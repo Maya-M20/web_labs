@@ -189,28 +189,6 @@
                 <button class="open">More</button>
 
             </article>
-
-            <script>
-                const openBtns = document.querySelectorAll('.open');
-                const closeBtns = document.querySelectorAll('.close');
-
-                openBtns.forEach((openBtn) => {
-                    openBtn.addEventListener('click', () => {
-                        const product = openBtn.closest('.product');
-                        const dialog = product.querySelector('.modal');
-
-                        dialog.showModal();
-                    });
-                });
-
-                closeBtns.forEach((closeBtn) => {
-                    closeBtn.addEventListener('click', () => {
-                        const dialog = closeBtn.closest('.modal');
-
-                        dialog.close();
-                    });
-                });
-            </script>
         </section>
     </main>
 

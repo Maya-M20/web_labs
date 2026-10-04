@@ -1,3 +1,23 @@
+const openBtns = document.querySelectorAll('.open');
+const closeBtns = document.querySelectorAll('.close');
+
+openBtns.forEach((openBtn) => {
+    openBtn.addEventListener('click', () => {
+        const product = openBtn.closest('.product');
+        const dialog = product.querySelector('.modal');
+
+        dialog.showModal();
+    });
+});
+
+closeBtns.forEach((closeBtn) => {
+    closeBtn.addEventListener('click', () => {
+        const dialog = closeBtn.closest('.modal');
+
+        dialog.close();
+    });
+});
+
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(product){
