@@ -30,6 +30,7 @@ h1 {
     margin-bottom: 5px; 
 }
 
+
 .shop-description {
     font-size: 15px;  
     font-weight: normal;
@@ -38,16 +39,15 @@ h1 {
 }
 
 .products-section {
-  padding-left: 45px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 30px 45px;
 }
 
 .product {
-  display: inline-block;
-  vertical-align: top; 
-  margin-right: 50px; 
-  margin-left: 25px;
-  margin-bottom: 30px; 
-  width: 190px;
+    width: 190px;
+    margin: 0 auto;
 }
 
 .product:last-child {
@@ -98,8 +98,13 @@ button {
     border-radius: 5px;
 }
 
+.cart-header {
+    margin-left: 50px;
+}
+
 .shop-button {
     display: inline-block;
+    margin-left: 50px;
     padding: 10px 10px;
     background-color: #fbfbfa;
     color: #e56515;
@@ -121,13 +126,13 @@ button {
 }
 
 .product-in-cart {
-  display: flex; 
-  gap: 500px;
-  align-items: center;
+    display: flex;
+    gap: 30px;
+    align-items: center;
 }
 
 .column {
-  flex: 1;  
+    flex: 1;  
 }
 
 form {
@@ -155,8 +160,8 @@ form input {
 
 .modal-form {
     background-color: #ea9460;
-    padding: 30px;         /* Внутренние отступы, чтобы текст не прилипал к краям */
-    border: none;          /* Убираем стандартную рамку браузера */
+    padding: 30px;
+    border: none;
     border-radius: 12px; 
 }
 .modal-form[open]::backdrop {
@@ -213,4 +218,65 @@ form input {
   text-align: center;  
 }
 
+@media (max-width: 900px) {
+    .products-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    h1 {
+        margin-left: 0;
+    }
+
+    .header-titles {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    header a {
+        margin-right: 0;
+    }
+
+    .products-section {
+        padding: 20px;
+    }
+
+    .product {
+        display: block;
+        width: 190px;
+        margin: 0 auto 30px auto;
+    }
+
+    .about {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 18px;
+    }
+
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .cart {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .product-in-cart {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+}
 
