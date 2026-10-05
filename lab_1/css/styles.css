@@ -224,7 +224,7 @@ form input {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 390px) {
 
     header {
         flex-direction: column;
